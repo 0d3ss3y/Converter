@@ -8,7 +8,6 @@ import Currency.available.available as available
 
 file_path = "Currency/database"
 
-
 def updateJson():
     try:
         client = currencyapicom.Client("cur_live_4ZC94me0yoNBhtbf4zelEMhwb16MB9qJzrzOj3eB")
@@ -83,6 +82,6 @@ def main():
     elif os.name == 'nt':
         os.system("cls")
         
-    updateJson()
+    # updateJson()
     opt = options()
     handleProcess(opt)
