@@ -6,15 +6,16 @@ import Currency.rates.exchange as exchange
 import Currency.history.history as history
 import Currency.available.available as available
 
-file_path = "Currency\database"
+file_path = "Currency/database"
+
 
 def updateJson():
     try:
         client = currencyapicom.Client("cur_live_4ZC94me0yoNBhtbf4zelEMhwb16MB9qJzrzOj3eB")
-        currency_json = client.currencies()
+        #currency_json = client.currencies()
         latest_json = client.latest()
 
-        saveCurrencies(currency_json)
+        #saveCurrencies(currency_json)
         saveLatest(latest_json)
     except Exception as e:
         print(f"Error updating JSON: {e}")
@@ -22,7 +23,6 @@ def updateJson():
     
 def saveLatest(data):
     try:
-        #latest_data = json.loads(data)
         os.makedirs(file_path, exist_ok=True)
         dir_path = os.path.join(file_path, 'latest.json')
 
