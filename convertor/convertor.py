@@ -15,6 +15,7 @@ def starting():
 
         if selected_opt in options:
             ProcessOpt(selected_opt)
+            break
         elif selected_opt in ["Quit","Q"]:
             break
         else:
