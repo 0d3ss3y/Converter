@@ -7,8 +7,9 @@ file_path = "Currency/database/"
 
 def process():
     date = determineDate()
-    #saveHistory(date)
+    saveHistory(date)
     target_country_code, target_symbol, meta = determineCountry()
+    display(target_country_code,target_symbol,meta)
        
     
 def saveHistory(date):        
@@ -71,4 +72,10 @@ def determineDate():
 
 def display(code,symbol,meta):
     os.system('cls')
-    print(f"")
+    
+    date = meta.split("Z")
+    print(f"REPORT | {date[1]} ")
+    print("--------------------")
+    print(f"code   | {code}    ")
+    print(f"symbol | {symbol}  ")
+    print("--------------------")
