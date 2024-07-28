@@ -21,7 +21,6 @@ def process():
                 print(f"Code: {currency_info['code']}")
                 print(f"Plural Name: {currency_info['name_plural']}")
                 print(f"Type: {currency_info['type']}")
-                print(f"Countries: {', '.join(currency_info['countries'])}")
                 print()
             
     except FileNotFoundError:

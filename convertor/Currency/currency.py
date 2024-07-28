@@ -82,6 +82,6 @@ def main():
     elif os.name == 'nt':
         os.system("cls")
         
-    # updateJson()
+    #updateJson()
     opt = options()
     handleProcess(opt)
