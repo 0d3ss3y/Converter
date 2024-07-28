@@ -28,7 +28,7 @@ def ProcessOpt(opt):
         case "Currency":
             print("You selected Currency")
             cur.main()
-            # Add your currency processing code here
+            
         case "Data":
             print("You selected Data")
             # Add your data processing code here
