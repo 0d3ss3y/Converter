@@ -11,10 +11,10 @@ file_path = "Currency/database"
 def updateJson():
     try:
         client = currencyapicom.Client("cur_live_4ZC94me0yoNBhtbf4zelEMhwb16MB9qJzrzOj3eB")
-        #currency_json = client.currencies()
+        currency_json = client.currencies()
         latest_json = client.latest()
 
-        #saveCurrencies(currency_json)
+        saveCurrencies(currency_json)
         saveLatest(latest_json)
     except Exception as e:
         print(f"Error updating JSON: {e}")
