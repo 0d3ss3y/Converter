@@ -1,4 +1,6 @@
 import Currency.currency as cur
+import Unit.unit as unit
+import os
 
 def starting():
     options =  ["Currency","Data","Electrical","File","Financial","Gaming","Health"
@@ -24,6 +26,7 @@ def starting():
 
 def ProcessOpt(opt):
     print(opt)
+    os.system("cls")
     match opt:
         case "Currency":
             print("You selected Currency")
@@ -31,7 +34,7 @@ def ProcessOpt(opt):
             
         case "Data":
             print("You selected Data")
-            # Add your data processing code here
+            
         case "Electrical":
             print("You selected Electrical")
             # Add your electrical processing code here
@@ -63,8 +66,7 @@ def ProcessOpt(opt):
             print("You selected Time")
             # Add your time processing code here
         case "Unit":
-            print("You selected Unit")
-            # Add your unit processing code here
+            unit.main()
         case "Url":
             print("You selected URL")
             # Add your URL processing code here
