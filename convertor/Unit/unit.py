@@ -80,7 +80,7 @@ def handleProcess(opt,code):
         response = requests.get(url,params)
         response.raise_for_status()
         data = response.json()
-        print(f"Converted Value: {value} = {data['result']}")
+        print(f"Converted Value: {value} {unit_from}s = {data['result']} {unit_to}s")
     except requests.RequestException as e:
         print(f"Error: {e}")
         print("Could not fetch the conversion result.")
