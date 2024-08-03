@@ -29,7 +29,6 @@ def ProcessOpt(opt):
     os.system("cls")
     match opt:
         case "Currency":
-            print("You selected Currency")
             cur.main()
             
         case "Data":
