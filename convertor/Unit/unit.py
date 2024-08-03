@@ -1,9 +1,7 @@
 import os
 import sys
-import Unit.conversion.conversion as convert
+import requests
 
-
-#Factory Reset
 def options():
     option = {1:"Length", 
               2:"Weight", 
@@ -42,7 +40,12 @@ def options():
 
 
 def handleProcess(opt,code):
-    convert.process(opt,code)
+    url = 'http://127.0.0.1:5000/convert'
+    
+    while True:
+        unit_from = input(f"Enter the unit you want to convert from: ").strip()
+        unit_to = input(f"Enter the unit you want to convert to: ").strip()
+        
 
 
 def main():
