@@ -39,13 +39,51 @@ def options():
             print("Please enter a valid number.")
 
 
+def display_units(selected_category):
+    units = {
+        "length": ["mts", "kilomts", "cmts", "millimts", "micromts", "nanomts", "mile", "yard", "foot", "inch", "lightyear"],
+        "weight": ["kgms", "gms", "mgms","pound", "ounce", "carrat"],
+        "volume": ["lts", "mlts", "usgallon","uscup"],
+        "temperature": ["celsius", "kelvin", "fahrenheit"],
+        "area": ["sqmts","sqmile", "sqft", "acre", "hectare"],
+        "time": ["sec", "milisec", "microsec", "nanosec", "picosec", "min", "hour", "day", "week", "month", "year"]
+    }
+    return units.get(selected_category, [])
+
+
 def handleProcess(opt,code):
     url = 'http://127.0.0.1:5000/convert'
     
+    # Display available units
+    print(f"\nAvailable units for {opt}:")
+    units = display_units(opt)
+    print("Unit: ", ', '.join(units))
+    
     while True:
-        unit_from = input(f"Enter the unit you want to convert from: ").strip()
-        unit_to = input(f"Enter the unit you want to convert to: ").strip()
-        
+        unit_from = input(f"\nEnter the unit you want to convert from ({opt}): ").strip()
+        unit_to = input(f"Enter the unit you want to convert to ({opt}): ").strip()
+
+        try:
+            value = float(input("Enter the value: "))
+            break
+        except ValueError:
+            print("Please enter a valid number")
+            
+    params = {
+        'category' : code,
+        'unit_from': unit_from,
+        'unit_to' : unit_to,
+        'value' : value
+    }
+    
+    try:
+        response = requests.get(url,params)
+        response.raise_for_status()
+        data = response.json()
+        print(f"Converted Value: {value} = {data['result']}")
+    except requests.RequestException as e:
+        print(f"Error: {e}")
+        print("Could not fetch the conversion result.")
 
 
 def main():
