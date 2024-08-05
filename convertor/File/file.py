@@ -14,4 +14,7 @@ def main():
     
 def options():
     os.system("cls" if os.name == 'nt' else "clear")
-    option
+    option_list = {1:"Image",
+                   2:"Document",
+                   3:"Audio",
+                   4:"Video"}
