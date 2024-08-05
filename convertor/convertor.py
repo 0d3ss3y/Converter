@@ -1,4 +1,5 @@
 import Currency.currency as cur
+import convertor.File.file as file
 import Unit.unit as unit
 import os
 
@@ -23,7 +24,7 @@ def starting():
         else:
             print("Invalid option. Please try again.")
             
-
+            
 def ProcessOpt(opt):
     print(opt)
     os.system("cls")
@@ -32,7 +33,7 @@ def ProcessOpt(opt):
             cur.main()
             
         case "Data":
-            print("You selected Data")
+            file.main()
             
         case "Electrical":
             print("You selected Electrical")
@@ -71,7 +72,6 @@ def ProcessOpt(opt):
             # Add your URL processing code here
         case _:
             print("Unhandled option")
-
 
 
 if __name__ == "__main__":
