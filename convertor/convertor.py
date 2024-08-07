@@ -1,5 +1,5 @@
 import Currency.currency as cur
-import convertor.File.file as file
+import File.file as file
 import Unit.unit as unit
 import os
 
@@ -33,13 +33,13 @@ def ProcessOpt(opt):
             cur.main()
             
         case "Data":
-            file.main()
-            
+            print("You selected Data")
+ 
         case "Electrical":
             print("You selected Electrical")
             # Add your electrical processing code here
         case "File":
-            print("You selected File")
+            file.main()
             # Add your file processing code here
         case "Financial":
             print("You selected Financial")
