@@ -15,6 +15,18 @@ def main():
     opt = options()
     print(opt)
     
+    match opt:
+        case "Image":
+            pass
+        case "Document":
+            pass
+        case "Audio":
+            pass
+        case "Video":
+            pass
+        
+        
+    
 def options():
     option_list = {1:"Image",
                    2:"Document",
