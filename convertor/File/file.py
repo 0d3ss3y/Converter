@@ -1,54 +1,24 @@
 import os
+from pdf2docx import parse
 
 def clearing(): 
     os.system("cls" if os.name == 'nt' else "clear")
 
 def main():
     clearing()
-    # # Prompt user to drag and drop files into the terminal
-    # print("Drag and drop the files into this terminal window and press Enter:")
+    loc,name, ext = process()
     
-    # # Read input from the user
-    # pdf_location = input("File paths: ")    
-    # pdf_name = pdf_location.strip().split("\\")
-    # print(f"Name : {pdf_name[-1]}")
-    opt = options()
-    print(opt)
+def process():
+    # Prompt user to drag and drop files into the terminal
+    print("Drag and drop the files into this terminal window and press Enter:")
     
-    match opt:
-        case "Image":
-            pass
-        case "Document":
-            pass
-        case "Audio":
-            pass
-        case "Video":
-            pass
-        
-        
-    
-def options():
-    option_list = {1:"Image",
-                   2:"Document",
-                   3:"Audio",
-                   4:"Video"}
-    
-    while True:
-        clearing()
-
-        for key,value in option_list.items():
-            print(f"{key}) {value}")
-            
-        try:
-            opt = int(input("Enter an index: "))
-        
-            if opt not in option_list.keys():
-                print("Invalid Option")
-                continue
-            return(option_list[opt])
-            
-            
-        except(ValueError):
-            print("Enter a valid index")
-        
-        
+    # Read input from the user
+    pdf_location = input("File paths: ")    
+    pdf_name = pdf_location.strip().split("\\")
+    ext_type = pdf_name[-1].split(".")[1]
+    ext = ext_type.upper().replace('"'," ").strip()
+    clearing()
+    print(f"Name : {pdf_name[-1]}")
+    print(f"Extension: {ext}")
+    #print(f"Extension: {ext_type.upper().replace('"'," ").strip()}")
+    return pdf_location,pdf_name,ext
