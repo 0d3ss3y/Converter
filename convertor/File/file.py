@@ -1,5 +1,4 @@
 import os
-from pdf2docx import parse
 
 def clearing(): 
     os.system("cls" if os.name == 'nt' else "clear")
@@ -9,16 +8,19 @@ def main():
     loc,name, ext = process()
     
 def process():
-    # Prompt user to drag and drop files into the terminal
     print("Drag and drop the files into this terminal window and press Enter:")
+    pdf_location = input("File paths: ").strip()
+    pdf_location = pdf_location.strip("'\"")
+    pdf_name_parts = pdf_location.split("/")
+    file_name = pdf_name_parts[-1].strip("'\"")  # Strip surrounding quotes from the file name
     
-    # Read input from the user
-    pdf_location = input("File paths: ")    
-    pdf_name = pdf_location.strip().split("\\")
-    ext_type = pdf_name[-1].split(".")[1]
-    ext = ext_type.upper().replace('"'," ").strip()
-    clearing()
-    print(f"Name : {pdf_name[-1]}")
+    ext_type = file_name.split(".")
+    if len(ext_type) > 1:
+        ext = ext_type[-1].upper().strip("'\"")  # Strip surrounding quotes from the extension
+    else:
+        ext = ""
+    
+    print(f"Name : {file_name}")
     print(f"Extension: {ext}")
-    #print(f"Extension: {ext_type.upper().replace('"'," ").strip()}")
-    return pdf_location,pdf_name,ext
+    
+    return pdf_location, file_name, ext
