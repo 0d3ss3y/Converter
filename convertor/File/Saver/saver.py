@@ -1,8 +1,12 @@
 import os
+import requests
 
-allowed_ext = {"Image" : ["JPEG","PNG", "BMP","GIF","JPG"]}
+allowed_ext = {"Image" :["JPEG","PNG", "BMP","GIF","JPG"],
+               "Document" :["PDF","DOCX"],
+               "AUDIO" :["M4A","MP3","WAV"],
+               "VIDEO" :["MP4","AVI"]}
 
-def options(opt):
+def process(opt):
     for key,values in allowed_ext.items():
         if opt in values:
             return display_opt(key,values,opt)
