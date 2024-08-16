@@ -1,5 +1,6 @@
 import os
 import File.Saver.saver as save
+import File.Saver.convertor as convert
 
 def clearing(): 
     os.system("cls" if os.name == 'nt' else "clear")
@@ -12,8 +13,8 @@ def main():
     print(f"Extension: {ext}\n")
 
     check,target_ext = save.process(ext)
-    # os.system("cls" if os.name == 'nt' else "clear")
-    
+    clearing()
+        
     if check and target_ext != None:
         print(f"Converting {name} to {target_ext}")
     else:
@@ -38,4 +39,3 @@ def process():
         ext = ""
     
     return pdf_location, name, ext
-
