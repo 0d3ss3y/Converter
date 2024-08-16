@@ -32,11 +32,11 @@ def process():
     file_name = pdf_name_parts[-1].strip("'\\") 
 
     ext_type = file_name.split(".")
-    #name = file_name.split(".")[0]
+    name = file_name.split(".")[0]
 
     if len(ext_type) > 1:
         ext = ext_type[-1].upper().strip("'\"")  
     else:
         ext = ""
     
-    return pdf_location, file_name, ext
+    return pdf_location, name, ext
