@@ -14,12 +14,10 @@ def main():
 
     check,target_ext,category = save.process(from_ext)
     clearing()
-    # print(target_ext)
-    # print(category)
-    # print(from_ext)
-        
+            
     if check and target_ext != None:
         print(f"Converting {name} to {target_ext}")
+        convert.main(category,target_ext,loc,name)
     else:
         print(f"Can't convert")
     
@@ -32,7 +30,7 @@ def process():
     
     pdf_name_parts = pdf_location.split("\\")
     file_name = pdf_name_parts[-1].strip("'\\") 
-    print(file_name)
+
     ext_type = file_name.split(".")
     #name = file_name.split(".")[0]
 
