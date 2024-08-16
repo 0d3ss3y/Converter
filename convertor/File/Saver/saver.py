@@ -1,6 +1,3 @@
-import os
-import requests
-
 allowed_ext = {"Image" :["JPEG","PNG", "BMP","GIF","JPG"],
                "Document" :["PDF","DOCX"],
                "AUDIO" :["M4A","MP3","WAV"],
