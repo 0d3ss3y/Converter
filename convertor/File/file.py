@@ -7,8 +7,7 @@ def clearing():
 def main():
     clearing()
     loc,name, ext = process()
-    os.system("cls" if os.name == 'nt' else "clear")
-
+    clearing()
     print(f"Name : {name}")
     print(f"Extension: {ext}\n")
 
