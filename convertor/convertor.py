@@ -53,10 +53,8 @@ def ProcessOpt(opt):
         case "Language":
             print("You selected Language")
             # Add your language processing code here
-        case "Measurement":
-            print("You selected Measurement")
-            # Add your measurement processing code here
         case "Network":
+            network.main()
             print("You selected Network")
             # Add your network processing code here
         case "Programming":
