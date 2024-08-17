@@ -1,7 +1,7 @@
 allowed_ext = {"Image" :["JPEG","PNG", "BMP","GIF","JPG"],
-               "Document" :["PDF","DOCX"],
-               "AUDIO" :["M4A","MP3","WAV"],
-               "VIDEO" :["MP4","AVI"]}
+               "Document" :["PDF","DOCX","TXT"],
+               "AUDIO" :["MP3","WAV","FLAC","AAC"],
+               "VIDEO" :["MP4","AVI","MKV","MOV"]}
 
 def process(opt):
 

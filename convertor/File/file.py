@@ -17,7 +17,7 @@ def main():
             
     if check and target_ext != None:
         print(f"Converting {name} to {target_ext}")
-        convert.main(category,target_ext,loc,name)
+        convert.main(category,target_ext,from_ext,loc,name)
     else:
         print(f"Can't convert")
     

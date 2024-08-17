@@ -1,11 +1,12 @@
 import requests
 
-def main(category,to_ext,dir_in,name):
+def main(category,to_ext,from_ext,dir_in,name):
     url = 'http://127.0.0.1:5000/convert'
     
     params = {
         'category' : category,
         'name': name,
+        'from': from_ext,
         'to' : to_ext,
         'pathway' : dir_in
     }
