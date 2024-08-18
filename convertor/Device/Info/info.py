@@ -5,8 +5,13 @@ def cpu_count():
     cpu_freq = psutil.cpu_freq(True)
     
     print("CPU Usuage per core:")
-    for i,(percent,freq) in enumerate(zip(cpu_percentage,cpu_freq),start=1):
-        print(f"Core {i}: {percent}% \nFrequency : {freq.current} MHz")
+    print(f"Number of cores : {cpu_percentage}")
+    
+    for information in cpu_freq:
+        print(information)
+    #print(cpu_freq)
+
+    
     
 def main():
     cpu_count()
