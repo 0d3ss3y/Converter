@@ -6,7 +6,7 @@ import os
 
 def starting():
     options =  ["Currency","Data","Electrical","File","Financial","Gaming","Health"
-                ,"Language","Measurement","Network","Programming","Time","Unit","Url"]
+                ,"Language","Devices","Programming","Time","Unit","Url"]
 
     print("Convertor Menu:\n")
     for key,opt in enumerate(options):
