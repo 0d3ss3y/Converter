@@ -1,6 +1,7 @@
 import Currency.currency as cur
 import File.file as file
 import Unit.unit as unit
+import Device.device as dev
 import os
 
 def starting():
@@ -24,10 +25,13 @@ def starting():
         else:
             print("Invalid option. Please try again.")
             
+
+def clearing():
+    os.system("cls" if os.name == 'nt' else "clear") 
             
 def ProcessOpt(opt):
     print(opt)
-    os.system("cls")
+    clearing()
     match opt:
         case "Currency":
             cur.main()
@@ -53,10 +57,8 @@ def ProcessOpt(opt):
         case "Language":
             print("You selected Language")
             # Add your language processing code here
-        case "Network":
-            network.main()
-            print("You selected Network")
-            # Add your network processing code here
+        case "Device":
+            dev.main()
         case "Programming":
             print("You selected Programming")
             # Add your programming processing code here
