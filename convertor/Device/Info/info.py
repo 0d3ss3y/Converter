@@ -1,7 +1,7 @@
 import psutil
 
 def cpu_count():
-    cpu_percentage = psutil.cpu_count(1,True)
+    cpu_percentage = psutil.cpu_count()
     cpu_freq = psutil.cpu_freq(True)
     
     print("CPU Usuage per core:")
