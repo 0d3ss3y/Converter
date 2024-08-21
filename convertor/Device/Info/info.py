@@ -1,6 +1,8 @@
 import psutil
 
-def cpu_count():
+#CPU,Network,Memory
+
+def cpu():
     cpu_percentage = psutil.cpu_count()
     cpu_freq = psutil.cpu_freq(True)
     
@@ -14,5 +16,5 @@ def cpu_count():
     
     
 def main():
-    cpu_count()
+    cpu()
     
