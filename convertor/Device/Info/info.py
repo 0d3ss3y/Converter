@@ -7,7 +7,6 @@ def clearing():
     os.system("cls" if os.name == 'nt' else "clear")
 
 def cpu():
-    #times = psutil.cpu_times(True)
     core_count = psutil.cpu_count(logical=True)
     usable_cores = len(psutil.Process().cpu_affinity())
     cpu_percent = psutil.cpu_percent(interval=1, percpu=True)
@@ -22,9 +21,14 @@ def cpu():
         print(f"Core {key} Percentage: {percent}")    
     print(f"\nBoot Time: {boot_time} seconds\nLast Booting time: {translated_time}") 
     
-    
+def memory():
+    labels = ("Total", "Available", "Percent", "Used", "Free")
+    mem = psutil.virtual_memory()
+    for label, value in zip(labels, mem):
+        print(f"{label} : {value}")
     
 def main():
     clearing()
     cpu()
+    memory()
     
