@@ -24,6 +24,7 @@ def cpu():
 def memory():
     labels = ("Total", "Available", "Percent", "Used", "Free")
     mem = psutil.virtual_memory()
+    print(f"\nVirtual Memory:")
     for label, value in zip(labels, mem):
         print(f"{label} : {value}")
     
