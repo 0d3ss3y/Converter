@@ -42,7 +42,7 @@ def main():
         case 1:
             dev_info.main()
         case 2:
-            pass
+            network.main()
         case 3:
             pass
         case 4:
