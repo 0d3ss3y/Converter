@@ -47,6 +47,10 @@ def number_info(number):
         Carrier = phonenumbers.carrier.name_for_number(phoneNumber,"en")
         Region = phonenumbers.geocoder.description_for_number(phoneNumber, "en")
 
+        print(f"Phone Number Info\n{phoneNumber}")
+        print(f"\nTimezone : {timeZone}")
+        print(f"Carrier Service : {Carrier}")
+        print(f"Region : {Region}")
 
 def number_matcher():
     pass
@@ -55,4 +59,5 @@ def number_matcher():
 def main():
     clearing()
     number = input("> Enter a number: ")
-    check = validation(number)
+    #check = validation(number)
+    number_info(number)
