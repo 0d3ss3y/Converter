@@ -5,8 +5,8 @@
 import os
 import Device.Data.data as data
 import Device.Info.info as dev_info
-import Device.Number as phone
-import Device.Wifi as network
+import Device.Number.phone as phone
+import Device.Wifi.wifi as network
 
 options = {
     1 : "Info",
@@ -44,6 +44,6 @@ def main():
         case 2:
             network.main()
         case 3:
-            pass
+            phone.main()
         case 4:
             pass
