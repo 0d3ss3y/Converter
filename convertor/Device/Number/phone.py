@@ -5,6 +5,9 @@ import os
 import phonenumbers
 import time
 
+import phonenumbers.carrier
+import phonenumbers.geocoder
+import phonenumbers.timezone
 
 options = {
     "Validate" : "Validate The Phone Number",
@@ -28,12 +31,21 @@ def validation(number):
     else:
         print(f"\n{number} is not a valid number \n{number} is not a possible number")
 
+    return valid_number
+
 def national_finder():
     pass
 
 
-def number_info():
-    pass
+def number_info(number):
+    checking = validation(number)
+    clearing()
+
+    if checking:
+        phoneNumber = phonenumbers.parse(number)
+        timeZone = phonenumbers.timezone.time_zones_for_number(phoneNumber)
+        Carrier = phonenumbers.carrier.name_for_number(phoneNumber,"en")
+        Region = phonenumbers.geocoder.description_for_number(phoneNumber, "en")
 
 
 def number_matcher():
@@ -43,4 +55,4 @@ def number_matcher():
 def main():
     clearing()
     number = input("> Enter a number: ")
-    validation(number)
+    check = validation(number)
