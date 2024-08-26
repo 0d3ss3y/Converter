@@ -9,11 +9,6 @@ import phonenumbers.carrier
 import phonenumbers.geocoder
 import phonenumbers.timezone
 
-options = {
-    "Validate" : "Validate The Phone Number",
-
-}
-
 def clearing():
     os.system("cls" if os.name == 'nt' else "clear")
 
@@ -33,10 +28,6 @@ def validation(number):
 
     return valid_number
 
-def national_finder():
-    pass
-
-
 def number_info(number):
     checking = validation(number)
     clearing()
@@ -52,12 +43,7 @@ def number_info(number):
         print(f"Carrier Service : {Carrier}")
         print(f"Region : {Region}")
 
-def number_matcher():
-    pass
-
-
 def main():
     clearing()
     number = input("> Enter a number: ")
-    #check = validation(number)
     number_info(number)
