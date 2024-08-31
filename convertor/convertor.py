@@ -5,8 +5,8 @@ import Device.device as dev
 import os
 
 def starting():
-    options =  ["Currency","Data","Electrical","File","Financial","Gaming","Health"
-                ,"Language","Device","Programming","Time","Unit","Url"]
+    options =  ["Currency","Electrical","File","Financial","Gaming","Health"
+                ,"Language","Device","Time","Unit","Url"]
 
     print("Convertor Menu:\n")
     for key,opt in enumerate(options):
@@ -35,9 +35,6 @@ def ProcessOpt(opt):
     match opt:
         case "Currency":
             cur.main()
-            
-        case "Data":
-            print("You selected Data")
  
         case "Electrical":
             print("You selected Electrical")
